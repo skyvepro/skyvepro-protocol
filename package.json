@@ -1,0 +1,14 @@
+{
+  "name": "skyve",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Skyve: put idle capital to work on Solana.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "assets": "python scripts/prep-assets.py",
+    "build": "node scripts/build.mjs",
+    "gates": "node scripts/gates.mjs",
+    "serve": "node scripts/serve.mjs"
+  }
+}

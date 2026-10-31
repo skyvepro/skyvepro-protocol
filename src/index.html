@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skyve | Put idle capital to work on Solana</title>
+<meta name="description" content="Skyve routes your deposit into concentrated liquidity on Solana and lets live trading activity pay you for it.">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="preload" as="image" href="assets/logo-640.png">
+</head>
+<body>
+<div class="progress" aria-hidden="true"><i data-progress></i></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top" data-top>
+  <div class="bar">
+    <a class="brand" href="#hero" aria-label="Skyve home">
+      <img src="assets/logo-192.png" width="40" height="40" alt="">
+      <span class="brand-word">SKYVE</span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#flow">Flow</a>
+      <a href="#breakdown">Breakdown</a>
+      <a href="#safeguards">Safeguards</a>
+      <a href="#market">Market</a>
+    </nav>
+    <div class="socials" aria-label="Social links">
+      {{SOCIAL_X}}
+      {{SOCIAL_GITHUB}}
+    </div>
+  </div>
+  {{CA_SLOT}}
+</header>
+
+<main id="main">
+<section class="hero" id="hero">
+  <div class="mesh" aria-hidden="true">
+    <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+  </div>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow hero-in" style="--d:0s"><span class="dot"></span>Built on {{CHAIN}}</p>
+      <h1 class="hero-title" aria-label="Idle capital, put to work.">
+        <span class="w" style="--i:0" aria-hidden="true">Idle</span>
+        <span class="w" style="--i:1" aria-hidden="true">capital,</span>
+        <span class="w" style="--i:2" aria-hidden="true">put</span>
+        <span class="w" style="--i:3" aria-hidden="true">to</span>
+        <span class="w" style="--i:4" aria-hidden="true">work.</span>
+      </h1>
+      <p class="hero-lede">Skyve places your deposit into concentrated liquidity pools, so every trade that crosses your range leaves a fee behind for you.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#market">Watch the market <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8h9M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="btn btn-ghost" href="#flow">Read the flow</a>
+      </div>
+    </div>
+    <div class="hero-stage" data-parallax>
+      <span class="ring r1" data-depth="0.35" aria-hidden="true"></span>
+      <span class="ring r2" data-depth="0.6" aria-hidden="true"></span>
+      <div class="depth" data-depth="1">
+        <div class="float">
+          <img class="hero-logo" src="assets/logo-640.png" width="640" height="640" alt="Skyve logo: five rising green bars inside a black disc" fetchpriority="high" decoding="async">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-tiles">
+    <div class="tile" data-spot><span class="tile-k">Network</span><strong class="tile-v">{{CHAIN}}</strong></div>
+    <div class="tile" data-spot><span class="tile-k">Market feed</span><strong class="tile-v"><span class="live-dot" aria-hidden="true"></span><span data-feed-word>Connecting</span></strong></div>
+    <div class="tile" data-spot><span class="tile-k">Contract</span><strong class="tile-v" data-ca-word>pending</strong></div>
+    <div class="tile" data-spot><span class="tile-k">Pools opened</span><strong class="tile-v is-pending">pending</strong></div>
+  </div>
+</section>
+
+<div class="ticker" aria-label="Live Solana movers" data-ticker>
+  <div class="ticker-track" data-ticker-track><span class="tick skel-tick"></span><span class="tick skel-tick"></span><span class="tick skel-tick"></span><span class="tick skel-tick"></span></div>
+</div>
+
+<section class="sec" id="market">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div>
+        <p class="kicker">Live market</p>
+        <h2>Where Solana volume is landing.</h2>
+        <p class="sub">Ten pairs ranked by what traded across the last day. Pulled straight from the open feed and refreshed while this tab is in view.</p>
+      </div>
+      <div class="pill" data-pill role="status"><span class="live-dot" aria-hidden="true"></span><span data-pill-word>Connecting</span></div>
+    </div>
+    <div class="board" data-reveal>
+      <div class="board-head" aria-hidden="true">
+        <span>#</span><span>Token</span><span class="r">Price</span><span class="r">24h</span><span class="r">Volume</span><span class="r">Liquidity</span><span class="r">Address</span>
+      </div>
+      <div class="board-body" data-rows></div>
+      <p class="board-err" data-err hidden>Feed unreachable. Retrying on a widening gap.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="flow">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div>
+        <p class="kicker">Flow</p>
+        <h2>From first deposit to payout in five moves.</h2>
+      </div>
+    </div>
+    <ol class="steps">
+      <li class="step" data-reveal data-spot><span class="n">1</span><h3>Fund</h3><p>Send a single asset into a vault. The vault is tied to one liquidity venue and has no other reach.</p></li>
+      <li class="step" data-reveal data-spot><span class="n">2</span><h3>Spread</h3><p>Your funds are laid across a band of price steps around the current quote, an equal slice in each.</p></li>
+      <li class="step" data-reveal data-spot><span class="n">3</span><h3>Earn</h3><p>Whenever a swap walks through your band, your slices collect a cut of what the trader pays.</p></li>
+      <li class="step" data-reveal data-spot><span class="n">4</span><h3>Recentre</h3><p>If the quote drifts far enough, a keeper slides the band back under it. The cost is itemised.</p></li>
+      <li class="step" data-reveal data-spot><span class="n">5</span><h3>Collect</h3><p>Claim whenever you like. Fees are split once, at the moment you collect.</p></li>
+    </ol>
+
+    <div class="panel" data-reveal data-tabs>
+      <div class="tabs" role="tablist" aria-label="Range style">
+        <button role="tab" id="t-tight" aria-controls="p-tight" aria-selected="true">Tight band</button>
+        <button role="tab" id="t-wide" aria-controls="p-wide" aria-selected="false" tabindex="-1">Wide band</button>
+      </div>
+      <div class="tabpanel" id="p-tight" role="tabpanel" aria-labelledby="t-tight">
+        <svg class="bins" viewBox="0 0 320 120" preserveAspectRatio="none" aria-hidden="true">
+          <g class="bin-set">
+            <rect x="60" y="30" width="12" height="80"/><rect x="78" y="30" width="12" height="80"/><rect x="96" y="30" width="12" height="80"/><rect x="114" y="30" width="12" height="80"/><rect x="132" y="30" width="12" height="80"/><rect class="hot" x="150" y="30" width="12" height="80"/><rect x="168" y="30" width="12" height="80"/><rect x="186" y="30" width="12" height="80"/><rect x="204" y="30" width="12" height="80"/><rect x="222" y="30" width="12" height="80"/><rect x="240" y="30" width="12" height="80"/>
+          </g>
+        </svg>
+        <p>Fewer steps packed close to the quote. Each slice sees more traffic, and the band needs recentring more often.</p>
+      </div>
+      <div class="tabpanel" id="p-wide" role="tabpanel" aria-labelledby="t-wide" hidden>
+        <svg class="bins" viewBox="0 0 320 120" preserveAspectRatio="none" aria-hidden="true">
+          <g class="bin-set">
+            <rect x="12" y="78" width="12" height="32"/><rect x="36" y="78" width="12" height="32"/><rect x="60" y="78" width="12" height="32"/><rect x="84" y="78" width="12" height="32"/><rect x="108" y="78" width="12" height="32"/><rect class="hot" x="132" y="78" width="12" height="32"/><rect x="156" y="78" width="12" height="32"/><rect x="180" y="78" width="12" height="32"/><rect x="204" y="78" width="12" height="32"/><rect x="228" y="78" width="12" height="32"/><rect x="252" y="78" width="12" height="32"/><rect x="276" y="78" width="12" height="32"/>
+          </g>
+        </svg>
+        <p>More steps spread across a longer stretch of prices. Quieter earnings per slice, but the quote has further to roam before you move.</p>
+      </div>
+      <p class="fine">Schematic only. Heights are not a forecast.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="breakdown">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div>
+        <p class="kicker">Breakdown</p>
+        <h2>Every position prints the same five readouts.</h2>
+        <p class="sub">Earnings and market drift are shown apart, so a good fee day never hides a bad price day. Figures go live with the first deposit.</p>
+      </div>
+    </div>
+    <div class="receipt" data-reveal>
+      <div class="rline" data-spot><div><h3>Fees collected</h3><p>What your slices earned from swaps, after the cut.</p></div><span class="val is-pending">pending</span></div>
+      <div class="rline" data-spot><div><h3>Price drift</h3><p>What the move in the quote did to the tokens in your band.</p></div><span class="val is-pending">pending</span></div>
+      <div class="rline" data-spot><div><h3>Recentre outlay</h3><p>Swap and network costs covered by the keeper when it slides the band.</p></div><span class="val is-pending">pending</span></div>
+      <div class="rline" data-spot><div><h3>Net result</h3><p>The first three lines added together.</p></div><span class="val is-pending">pending</span></div>
+      <div class="rline" data-spot><div><h3>Against holding</h3><p>The result set against leaving the deposit untouched.</p></div><span class="val is-pending">pending</span></div>
+    </div>
+    <div class="split" data-reveal>
+      <div class="tile" data-spot><span class="tile-k">Venue fee</span><strong class="tile-v is-pending">pending</strong></div>
+      <div class="tile" data-spot><span class="tile-k">Protocol share</span><strong class="tile-v is-pending">pending</strong></div>
+      <div class="tile" data-spot><span class="tile-k">Service cut</span><strong class="tile-v is-pending">pending</strong></div>
+      <div class="tile" data-spot><span class="tile-k">Paid to you</span><strong class="tile-v is-pending">pending</strong></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="safeguards">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div>
+        <p class="kicker">Safeguards</p>
+        <h2>A vault with a short list of things it may do.</h2>
+      </div>
+    </div>
+    <div class="rules">
+      <article class="rule" data-reveal data-spot><span class="n">A</span><h3>Approved assets only</h3><p>The vault accepts a fixed list of tokens and refuses every other mint.</p></article>
+      <article class="rule" data-reveal data-spot><span class="n">B</span><h3>One venue, one route</h3><p>Capital flows through a single on-chain program, and the vault is the owner of the position.</p></article>
+      <article class="rule" data-reveal data-spot><span class="n">C</span><h3>Keeper can only recentre</h3><p>The automation holds a lone permission: sliding the band inside its written limits.</p></article>
+      <article class="rule" data-reveal data-spot><span class="n">D</span><h3>Exit is yours</h3><p>Pull out whenever you want and take your proportional share of every step.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec cta-sec">
+  <div class="wrap">
+    <div class="cta" data-reveal>
+      <img src="assets/logo-192.png" width="72" height="72" alt="">
+      <h2>Give your balance a job.</h2>
+      <p>Follow the live board, read the readouts, then decide on your own terms.</p>
+      <div class="hero-ctas"><a class="btn btn-primary" href="#market">Back to the board</a><a class="btn btn-ghost" href="#hero">Top of page</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <a class="brand" href="#hero" aria-label="Skyve home"><img src="assets/logo-192.png" width="40" height="40" alt=""><span class="brand-word">SKYVE</span></a>
+    <nav class="foot-nav" aria-label="Footer"><a href="#flow">Flow</a><a href="#breakdown">Breakdown</a><a href="#safeguards">Safeguards</a><a href="#market">Market</a></nav>
+    <p class="fine">Market figures come from a public feed and carry no endorsement of any token. Nothing here is advice.</p>
+  </div>
+</footer>
+
+<script type="application/json" id="register">{{REGISTER_JSON}}</script>
+<script src="app.js" defer></script>
+</body>
+</html>

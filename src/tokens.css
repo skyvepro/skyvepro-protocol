@@ -1,0 +1,50 @@
+/*
+  The only file in the repo that may contain colour literals.
+  Provenance: k-means (k=8, seed 1, n_init 3) over opaque pixels of the assets, each centre
+  snapped to the nearest real pixel; coordinates are (x,y) in the source file.
+    brand/LOGO SKYVE PNG...png  (2000x2000, RGBA colortype 6)
+      #080808 @(788,515)   disc            81.8%
+      #46f7a4 @(1275,1148) bars            8.1%
+      #24a15d @(692,1007)  short bar       1.6%
+      #10482d @(866,962)   bar shading     0.3%
+    brand/LOGO SKYVE PNG.png (2000x2000, opaque)
+      #f0f0e3 @(1532,1285) paper           76.7%
+    reference/SKYVE 1.jpg.jpeg  (1600x900)
+      #010602 @(749,285)   void            54.2%
+      #062110 @(125,842)   forest deep     19.1%
+      #064d25 @(1194,366)  forest          9.6%
+      #048340 @(1581,319)  forest bright   5.2%
+      #e8f4f2 @(1176,204)  mist            3.9%
+      #09c36f @(1210,359)  emerald         3.5%
+      #788885 @(1212,177)  slate           1.0%
+*/
+:root {
+  --void: #010602;
+  --disc: #080808;
+  --forest-deep: #062110;
+  --forest: #064d25;
+  --forest-bright: #048340;
+  --green: #24a15d;
+  --emerald: #09c36f;
+  --mint: #46f7a4;
+  --paper: #f0f0e3;
+  --mist: #e8f4f2;
+  --slate: #788885;
+
+  --ground: var(--void);
+  --panel: color-mix(in srgb, var(--forest-deep) 70%, var(--void));
+  --ink: var(--mist);
+  --ink-2: var(--slate);
+  --accent: var(--mint);
+  --rule: color-mix(in srgb, var(--slate) 32%, transparent);
+
+  --ease-settle: cubic-bezier(.22, 1, .36, 1);
+  --dur-hover: .22s;
+  --dur-tap: .18s;
+  --r-pill: 999px;
+  --r-cell: 6px;
+  --r-glass: 22px;
+  --gutter: clamp(16px, 3.9vw, 56px);
+  --header-h: 64px;
+  --ca-h: 64px;
+}

@@ -1,0 +1,278 @@
+Reference copy snapshot used only by the originality gate.
+>SKIVE — automated liquidity desk on Solana
+Automated liquidity desk on Solana: supply your SOL and USDC to Meteora DLMM price bins and collect the fees real trades pay.
+Skip to content
+SKIVE
+SKIVE
+How it works
+Receipt
+Vault rules
+Ledger
+Connect wallet
+Open app
+Scroll
+Your funds make Solana’s markets.
+Your deposit spreads over 
+61
+Meteora
+ price bins and collects each fill’s fee.
+Open app 
+CA
+E5ybm4acARqNKEAHpUqYG1BRLpYai9anMz8enAHpump
+Copy
+Pool
+SOL–USDC
+cbBTC–USDC
+181.86
+182.59
+183.32
+184.05
+184.79
+185.53
+186.27
+187.02
+USDC
+1,083.08
+SOL
+7.588
+184.02
+Fee meter
+1,142
+ paid fills
+4
+ rebalances
+Illustrative replay
+Your funds
+$2,502.88
+Fees earned
++$23.44
+Price change
+−$18.59
+Rebalance cost
+−$1.97
+Net PnL
++$2.88
+Deposit
+Amount
+0.00
+Deposit
+Open app 
+SKIVE burned by buybacks
+Reading the burn ledger
+Burns
+--
+Last burn
+--
+Latest burn
+--
+Burn ledger 
+How the desk works
+01
+Deposit
+Put SOL or USDC into a vault that only signs for Meteora DLMM.
+My vault
+02
+Range
+One position: 61 price bins around the price, equal liquidity in each.
+Strategy rules
+03
+Fills
+Each swap that crosses your bins pays them their share of the fee.
+Pools
+04
+Re-range
+After a 22-bin drift the keeper moves the range. Its cost is on your receipt.
+Strategy rules
+05
+Claim
+Claims collect your fees: 15% service fee, 85% to you.
+Fees & PnL
+Five lines on every position
+Fees and price change are separate numbers. A loss prints in red at the size of the fee, and the last line compares with simply holding.
+Open Fees & PnL
+SOL–USDC
+ position
+Illustrative replay
+Fees earned
+Fees your bins earned from fills, after the service fee.
++$23.44
+Inventory price change
+What the price move did to the tokens your bins hold.
+−$18.59
+Rebalance cost
+Swap and network fees the keeper paid to re-range.
+−$1.97
+Net PnL
+Fees + price change + rebalance cost.
++$2.88
+vs simply holding
+Net PnL minus what keeping your deposit in your wallet would have made.
++$4.35
+Where a fill’s fee goes
+0.04
+%
+ base fee per 
+SOL–USDC
+ swap, more in fast markets
+5%
+ to the Meteora protocol
+15%
+ of your claim to the service fee ledger
+85%
+ of your claim to you
+What the vault allows
+01
+Allowed tokens only
+The vault takes only allowlisted mints: SOL, USDC, cbBTC.
+02
+One program to talk to
+Liquidity moves only through Meteora DLMM, owned by the vault's address.
+03
+The keeper re-ranges, nothing else
+Its one permission: moving the range within the strategy rules.
+04
+Your share, your withdrawal
+Withdraw any time and receive your share of every bin.
+Meteora DLMM
+ program
+LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo
+Copy
+View on Solscan
+My vault
+Strategy rules
+Two funding paths, two ledgers
+30%
+ of creator fees buy SKIVE and burn it. Service fees, after costs and reserves, go
+50%
+ to stakers, 
+20%
+ to more buy and burn and
+30%
+ to the team reserve.
+Creator-fee-funded
+1
+Creator fees from SKIVE trading arrive.
+2
+30%
+ of them buy SKIVE.
+3
+The bought SKIVE is burned.
+4
+The row links buy, burn and supply.
+Service-fee-funded
+1
+The 
+15%
+ service fee on claimed LP fees.
+2
+Costs and reserves come off first.
+3
+The rest splits once:
+Stakers
+50%
+Buy and burn
+20%
+Team reserve
+30%
+Staking starts next period
+Only staked SKIVE counts.
+A stake earns from the next settlement period.
+Unstaking keeps settled claims.
+Period 1
+Period 2
+Stake
+Period 3
+Allocated
+Period 4
+Allocated · unstake
+Period 5
+Claims kept
+Buyback & burn ledger
+SKIVE staking
+Proof of runs
+Place your first range.
+Connect a wallet in the app, pick a pool, read its strategy rules and deposit. The receipt starts with your first fill.
+Open app 
+See the pools
+SKIVE
+SKIVE
+Open app
+Pools
+Strategy rules
+My vault
+Fees & PnL
+SKIVE staking
+Buyback & burn ledger
+How it works
+Receipt
+Vault rules
+Ledger
+SKIVE on X
+Proof of runs
+Meteora DLMM
+ program on Solscan
+© 2026 SKIVE
+SKIVE burned by buybacks
+Updated 0s ago
+20,634,174.83
+SKIVE
+2.063
+%
+ of the 
+1,000,000,000
+ launch supply
+12,604
+28m ago
+12,273
+27m ago
+7,954
+25m ago
+12,766
+24m ago
+45,225
+23m ago
+12,384
+22m ago
+119,000
+21m ago
+31,079
+20m ago
+14,651
+19m ago
+11,553
+18m ago
+64,010
+17m ago
+9,808
+16m ago
+15,769
+15m ago
+10,978
+14m ago
+8,614
+13m ago
+6,094
+11m ago
+16,805
+11m ago
+11,112
+10m ago
+9,687
+9m ago
+7,994
+8m ago
+7,136
+7m ago
+11,118
+4m ago
+11,014
+2m ago
+6,118
+14s ago
+Burns
+216
+Last burn
+14s ago
+Latest burn
+4jZuB...gTcjP 
+Burn ledger 
